@@ -1,97 +1,96 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Spehrea - Source Code Structure
 
-# Getting Started
+This document explains the organized folder structure of the Spehrea React Native application.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 📁 Folder Structure
 
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```
+src/
+├── components/           # Reusable UI components
+│   ├── common/          # Common components (Button, Input, etc.)
+│   ├── forms/           # Form-specific components
+│   └── cards/           # Card components
+├── screens/             # Screen components organized by feature
+│   ├── auth/           # Authentication screens
+│   └── main/           # Main app screens
+├── navigation/          # Navigation configuration
+├── services/           # API and external services
+│   ├── api/           # API calls
+│   └── firebase/      # Firebase configuration
+├── hooks/              # Custom React hooks
+├── context/            # React Context providers
+├── utils/              # Utility functions and constants
+│   ├── helpers/       # Helper functions
+│   └── constants/     # App constants
+├── styles/             # Global styles and themes
+└── assets/             # Static assets (images, fonts, etc.)
 ```
 
-## Step 2: Build and run your app
+## 🎯 Key Benefits
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### 1. **Feature-Based Organization**
+- Related screens are grouped together
+- Easy to locate and maintain code
+- Clear separation of concerns
 
-### Android
+### 2. **Reusable Components**
+- Common components can be shared across screens
+- Consistent UI/UX throughout the app
+- Easier to maintain and update
 
-```sh
-# Using npm
-npm run android
+### 3. **Centralized Configuration**
+- All constants in one place
+- Global styles for consistency
+- Easy to modify app-wide settings
 
-# OR using Yarn
-yarn android
+### 4. **Scalable Architecture**
+- Easy to add new features
+- Clear structure for team collaboration
+- Maintainable codebase
+
+## 📝 Usage Examples
+
+### Importing Constants
+```javascript
+import { COLORS, DIMENSIONS, STRINGS } from '../utils/constants';
+// or
+import COLORS from '../utils/constants/colors';
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+### Importing Helper Functions
+```javascript
+import { validateEmail, formatPhoneNumber } from '../utils/helpers';
+// or
+import validation from '../utils/helpers/validation';
 ```
 
-Then, and every time you update your native dependencies, run:
+### Using Global Styles
+```javascript
+import globalStyles from '../styles/globalStyles';
 
-```sh
-bundle exec pod install
+// In your component
+<View style={globalStyles.container}>
+  <Text style={globalStyles.title}>Title</Text>
+</View>
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 🔧 Migration Notes
 
-```sh
-# Using npm
-npm run ios
+The old structure has been reorganized as follows:
 
-# OR using Yarn
-yarn ios
-```
+- `screens/` → `src/screens/auth/` and `src/screens/main/`
+- `assets/` → `src/assets/`
+- `utils/` → `src/services/api/` and `src/utils/helpers/`
+- `firebase.config.js` → `src/services/firebase/config.js`
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+All import paths have been updated accordingly.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 🚀 Next Steps
 
-## Step 3: Modify your app
+1. **Add more reusable components** as the app grows
+2. **Implement custom hooks** for common logic
+3. **Add context providers** for global state management
+4. **Create more helper functions** as needed
+5. **Add unit tests** following the same structure
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This structure follows React Native best practices and will scale well as the application grows!
