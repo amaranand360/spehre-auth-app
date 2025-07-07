@@ -26,6 +26,7 @@ DerivedData
 #
 android/app/google-services.json
 android/app/debug.keystore
+.env
 build/
 .idea
 .gradle
