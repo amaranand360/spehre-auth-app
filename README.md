@@ -1,96 +1,129 @@
-# Spehrea - Source Code Structure
+# Spehrea - App
 
-This document explains the organized folder structure of the Spehrea React Native application.
+Spehrea is a React Native mobile application This is an assignment project showcasing modern React Native development practices with Firebase authentication.
 
-## 📁 Folder Structure
+## ✨ Features
 
-```
-src/
-├── components/           # Reusable UI components
-│   ├── common/          # Common components (Button, Input, etc.)
-│   ├── forms/           # Form-specific components
-│   └── cards/           # Card components
-├── screens/             # Screen components organized by feature
-│   ├── auth/           # Authentication screens
-│   └── main/           # Main app screens
-├── navigation/          # Navigation configuration
-├── services/           # API and external services
-│   ├── api/           # API calls
-│   └── firebase/      # Firebase configuration
-├── hooks/              # Custom React hooks
-├── context/            # React Context providers
-├── utils/              # Utility functions and constants
-│   ├── helpers/       # Helper functions
-│   └── constants/     # App constants
-├── styles/             # Global styles and themes
-└── assets/             # Static assets (images, fonts, etc.)
-```
+### 🔐 **Authentication System**
+- **Email/Password Login** - Traditional login with email and password
+- **Phone Number Authentication** - OTP-based verification using Firebase
+- **Google Sign-In** - Quick login with Google account
+- **Password Creation** - Set up new passwords for accounts
 
-## 🎯 Key Benefits
+### 🏠 **Home Dashboard**
+- **Stats Overview** - View connections, applications, and study groups
+- **Quick Actions** - Fast access to find peers, internships, jobs, and study groups
 
-### 1. **Feature-Based Organization**
-- Related screens are grouped together
-- Easy to locate and maintain code
-- Clear separation of concerns
 
-### 2. **Reusable Components**
-- Common components can be shared across screens
-- Consistent UI/UX throughout the app
-- Easier to maintain and update
+### 📱 **Bottom Navigation**
+- **Home** - Dashboard with stats and activities
+- **Explore** - Discover new opportunities and connections
+- **Messages** - Communication hub with recent conversations
+- **Profile** - User account management and settings
 
-### 3. **Centralized Configuration**
-- All constants in one place
-- Global styles for consistency
-- Easy to modify app-wide settings
+### 🎨 **UI/UX Features**
+- **Modern Design** - Clean and intuitive interface
+- **Blue Theme** - Consistent color scheme throughout
+- **Focus Highlighting** - Input fields highlight when active
+- **Profile Menu** - Dropdown menu with logout option
 
-### 4. **Scalable Architecture**
-- Easy to add new features
-- Clear structure for team collaboration
-- Maintainable codebase
+## 🛠️ Tech Stack
 
-## 📝 Usage Examples
+- **React Native** - Cross-platform mobile development
+- **Firebase Authentication** - User authentication and management
+- **React Navigation** - Screen navigation and routing
+- **Vector Icons** - Material Design icons
+- **Linear Gradient** - Beautiful gradient backgrounds
+- **Google Sign-In** - Google authentication integration
 
-### Importing Constants
-```javascript
-import { COLORS, DIMENSIONS, STRINGS } from '../utils/constants';
-// or
-import COLORS from '../utils/constants/colors';
-```
+## 📱 Screens Overview
 
-### Importing Helper Functions
-```javascript
-import { validateEmail, formatPhoneNumber } from '../utils/helpers';
-// or
-import validation from '../utils/helpers/validation';
-```
+### Authentication Flow
+1. **Welcome Screen** - App introduction and getting started
+2. **Login Screen** - Email/password and social login options
+3. **Phone Number Screen** - Enter phone number for OTP verification
+4. **OTP Verification Screen** - Enter 6-digit verification code
+5. **Password Creation Screen** - Set up new password
 
-### Using Global Styles
-```javascript
-import globalStyles from '../styles/globalStyles';
+### Main App
+6. **Home Screen** - Dashboard with stats, activities, and navigation
 
-// In your component
-<View style={globalStyles.container}>
-  <Text style={globalStyles.title}>Title</Text>
-</View>
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 
+- React Native CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development)
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/amaranand360/spehre-auth-app.git
 ```
 
-## 🔧 Migration Notes
+2. **Install dependencies**
+```bash
+npm install
+```
 
-The old structure has been reorganized as follows:
+3. **Install iOS dependencies (iOS only)**
+```bash
+cd ios && pod install && cd ..
+```
 
-- `screens/` → `src/screens/auth/` and `src/screens/main/`
-- `assets/` → `src/assets/`
-- `utils/` → `src/services/api/` and `src/utils/helpers/`
-- `firebase.config.js` → `src/services/firebase/config.js`
+4. **Start Metro bundler**
+```bash
+npx react-native start
+```
 
-All import paths have been updated accordingly.
+5. **Run the app**
+```bash
+# For Android
+npx react-native run-android
 
-## 🚀 Next Steps
+# For iOS
+npx react-native run-ios
+```
 
-1. **Add more reusable components** as the app grows
-2. **Implement custom hooks** for common logic
-3. **Add context providers** for global state management
-4. **Create more helper functions** as needed
-5. **Add unit tests** following the same structure
+## 🧪 Demo Credentials
 
-This structure follows React Native best practices and will scale well as the application grows!
+### For Testing Login Features
+
+#### **Email/Password Login**
+- **Email:** `amaranand806@gmail.com`
+- **Password:** `123456`
+
+#### **Phone Number Authentication**
+- **Phone Number:** `8292772484`
+- **OTP Code:** `123456`
+
+#### **Google Sign-In**
+- Use any valid Google account
+- Google authentication is fully functional
+
+
+
+## 🎥 Demo Video
+
+Watch the complete app demonstration: [Demo Video Link]
+
+## � Project Structure
+
+```
+Spehrea/
+├── src/                           # Main source directory
+│   ├── screens/                   # Screen components
+│   │   ├── auth/                 # Authentication screens
+│   │   └── main/                 # Main app screens
+│   ├── navigation/               # Navigation configuration
+│   ├── services/                 # API and Firebase services
+│   ├── utils/                    # Utility functions and constants
+│   ├── styles/                   # Global styles and themes
+│   └── assets/                   # Images and static assets
+├── android/                      # Android platform files
+├── ios/                          # iOS platform files
+└── package.json                  # Dependencies and scripts
+```
+
