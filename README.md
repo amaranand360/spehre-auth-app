@@ -107,8 +107,7 @@ npx react-native run-ios
 
 ## 🎥 Demo Video
 
-Watch the complete app demonstration: https://drive.google.com/file/d/173eH6sJ7KHm5rrhHej0pPExEe7hE0v88/view?usp=sharing
-
+Watch the complete app demonstration: [Demo Video Link]
 
 ## � Project Structure
 
