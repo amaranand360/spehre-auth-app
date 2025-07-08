@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     paddingTop: 10,
   },
   backButton: {
@@ -211,10 +211,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 1,
   },
   otpInput: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    fontSize: 20,
+    width: 46,
+    height: 46,
+    borderRadius: 23,
+    fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
   },
